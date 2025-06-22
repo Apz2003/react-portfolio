@@ -562,49 +562,132 @@ p {
   color: var(--primary-light);
 }
 
-/* Contact Section */
+/* ===== Professional Contact Section ===== */
 .contact-section {
-  padding: 4rem 1rem;
-  max-width: 1000px;
+  padding: 5rem 1rem;
+  max-width: 1200px; /* Slightly wider for better spacing */
   margin: 0 auto;
 }
 
 .contact-container {
   display: flex;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 4rem; /* Increased gap */
+  margin-top: 3rem;
+  align-items: flex-start; /* Align items to top */
 }
 
 .contact-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  text-align: left;
+  gap: 2rem;
+  padding: 1.5rem;
 }
 
 .contact-form {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 500px;
-  padding: 2rem;
-  margin-left: auto; /* This pushes the form to the right */
+  gap: 1.8rem;
+  max-width: 550px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Keep all your existing .contact-detail, .form-group, etc. styles */
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
 
-/* Responsive adjustments */
+/* Form Elements */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: white;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Form Labels */
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Contact Info Cards */
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-item svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
+    gap: 2rem;
   }
   
   .contact-form {
-    margin-left: 0; /* Reset on mobile */
     width: 100%;
     max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .contact-info {
+    padding: 0;
   }
 }
 /* Footer */

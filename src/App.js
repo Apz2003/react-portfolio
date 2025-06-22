@@ -44,7 +44,7 @@ const projects = [
     title: "Movie Ticket Booking Website",
     description: "A full-stack web application for booking movie tickets with seat selection and payment processing.",
     tech: "Java, JSP, Servlets, HTML, CSS, JavaScript, MySQL",
-    image: "movie-booking.jpg",
+    image: "moviebooking.png",
     link: "#"
   },
   {
@@ -113,7 +113,7 @@ function App() {
         transition={{ 
           type: "spring", 
           stiffness: 100,
-          damping: 10
+          damping: 20
         }}
       >
         <div className="navbar-container">
@@ -242,51 +242,27 @@ function App() {
   viewport={{ once: true, margin: "-50px" }}
   transition={{ duration: 0.6 }}
 >
-  <motion.div 
-    className="section-header"
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-  >
-    <motion.h2 className="section-title" variants={itemVariants}>
-      Skills & Expertise
-    </motion.h2>
-    <motion.p className="section-subtitle" variants={itemVariants}>
-      Technologies I work with
-    </motion.p>
-  </motion.div>
+  <div className="section-header" style={{ textAlign: 'center' }}>
+    <h2 className="section-title">Skills & Expertise</h2>
+    <p className="section-subtitle">Technologies I work with</p>
+  </div>
   
-  <motion.div 
-    className="skills-container"
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-  >
-    <motion.div 
-      className="skill-category"
-      variants={itemVariants}
-      whileHover={{ y: -5 }}
-    >
+  <div className="skills-container" style={{ textAlign: 'left' }}>
+    <div className="skill-category">
       <div className="skill-icon"><FaCode /></div>
       <h3>Frontend Development</h3>
       <ul className="skills-list">
         <li>HTML5 & CSS3</li>
-        <li>JavaScript (ES6+)</li>
+        <li>JavaScript </li>
         <li>React.js</li>
         <li>Responsive Design</li>
         <li>Tailwind CSS</li>
-        <li>Bootstrap</li>
-        <li>jQuery</li>
+        
+        
       </ul>
-    </motion.div>
+    </div>
     
-    <motion.div 
-      className="skill-category"
-      variants={itemVariants}
-      whileHover={{ y: -5 }}
-    >
+    <div className="skill-category">
       <div className="skill-icon"><FaTools /></div>
       <h3>Tools & Platforms</h3>
       <ul className="skills-list">
@@ -295,16 +271,12 @@ function App() {
         <li>Figma</li>
         <li>VS Code</li>
         <li>MySQL</li>
-        <li>Postman</li>
-        <li>Netlify</li>
+        
+        
       </ul>
-    </motion.div>
+    </div>
     
-    <motion.div 
-      className="skill-category"
-      variants={itemVariants}
-      whileHover={{ y: -5 }}
-    >
+    <div className="skill-category">
       <div className="skill-icon"><FaUserTie /></div>
       <h3>Soft Skills</h3>
       <ul className="skills-list">
@@ -315,8 +287,8 @@ function App() {
         <li>Adaptability</li>
         <li>Time Management</li>
       </ul>
-    </motion.div>
-  </motion.div>
+    </div>
+  </div>
 </motion.section>
 
       {/* Projects Section */}

@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaFileDownload, FaCode, FaTo
 import { FiExternalLink } from 'react-icons/fi';
 import './App.css';
 
+
 // Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,31 +49,31 @@ const projects = [
     link: "#"
   },
   {
-    title: "Computer Parts E-commerce",
-    description: "Online store for computer components with shopping cart and admin dashboard.",
+    title: "Air Quality Monitoring Website",
+    description: "Air quality monitoring web application with real-time pollution data, interactive maps, and an admin dashboard for managing sensor locations and alerts.",
     tech: "HTML, CSS, JavaScript, PHP, MySQL",
-    image: "computer-parts.jpg",
+    image: "Airquality.png",
     link: "#"
   },
   {
     title: "Home Service Booking App",
     description: "Mobile application for booking home services with real-time tracking and payment integration.",
     tech: "Flutter, Firebase, Google Maps API",
-    image: "Homeservice.png",
+    image: "home.png",
     link: "#"
   },
   {
     title: "Blood Donation Management",
     description: "System connecting donors with recipients and managing blood bank inventory.",
     tech: "Flutter, Firebase, Firestore",
-    image: "blood-donation.jpg",
+    image: "blood.png",
     link: "#"
   },
   {
     title: "Event Management Platform",
     description: "Mobile app for creating, discovering, and managing local events.",
     tech: "Flutter, Firebase, Geolocation",
-    image: "Event.png",
+    image: "Eve.png",
     link: "#"
   }
 ];
@@ -122,7 +123,7 @@ function App() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <span className="logo-highlight">A</span>psara
+            <span className="logo-highlight">W</span>elcome
           </motion.div>
           <motion.ul 
             className="nav-links"
@@ -358,7 +359,7 @@ function App() {
                   }}
                   transition={{ type: "spring", stiffness: 500 }}
                 >
-                  View Project <FiExternalLink />
+                  
                 </motion.a>
               </div>
             </motion.div>

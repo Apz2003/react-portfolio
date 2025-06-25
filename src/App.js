@@ -65,7 +65,7 @@ const projects = [
   {
     title: "Blood Donation Management",
     description: "System connecting donors with recipients and managing blood bank inventory.",
-    tech: "Flutter, Firebase, Firestore",
+    tech: "C#,MySQL",
     image: "blood.png",
     link: "#"
   },
@@ -172,6 +172,7 @@ function App() {
               Currently specializing in React, JavaScript, and modern frontend technologies.
             </motion.p>
             <motion.div className="hero-actions">
+              
   {/* Download CV Button */}
   <motion.a 
     href="/Apsara_CV.pdf" 
@@ -180,6 +181,7 @@ function App() {
     whileHover={{
       y: -3,
       backgroundColor: "var(--primary-dark)"
+      
     }}
     whileTap={{ scale: 0.98 }}
   >
@@ -195,6 +197,7 @@ function App() {
       y: -3,
       backgroundColor: "rgba(37, 99, 235, 0.1)",
       borderColor: "var(--primary-light)"
+      
     }}
     whileTap={{ scale: 0.98 }}
   >

@@ -229,6 +229,7 @@ p {
   padding: 7rem 0 5rem;
   position: relative;
   overflow: hidden;
+  
 }
 
 .hero-content {
@@ -237,6 +238,7 @@ p {
   gap: 3rem;
   position: relative;
   z-index: 1;
+  
 }
 
 .hero-text {
@@ -286,6 +288,7 @@ p {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  
 }
 
 .hero-image {
@@ -316,6 +319,8 @@ p {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
+
 }
 
 .download-btn, .contact-btn {
@@ -329,6 +334,7 @@ p {
   transition: all 0.3s ease;
   cursor: pointer;
   gap: 0.5rem;
+  
 }
 
 .download-btn {
@@ -349,6 +355,8 @@ p {
   background-color: transparent;
   color: var(--primary);
   border: 2px solid var(--primary);
+  
+ 
 }
 
 .arrow-icon {

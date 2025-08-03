@@ -10,7 +10,7 @@ const Footer = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-xl font-bold">AA</div>
+        
         <div className="flex gap-6 text-sm">
           <a href="#home" className="hover:underline">Home</a>
           <a href="#about" className="hover:underline">About</a>

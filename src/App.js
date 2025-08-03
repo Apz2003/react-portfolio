@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import Skills from './components/Skills';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     if (darkMode) {

@@ -76,9 +76,9 @@ const ProjectModal = ({ project, onClose }) => {
   return (
     <motion.div
       className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0,scale: 0.95}}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
     >
       <div className="relative w-full max-w-3xl bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 mx-4 md:mx-0">
         <button

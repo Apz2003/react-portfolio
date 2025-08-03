@@ -76,7 +76,7 @@ const Contact = () => {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
               <input
                 type="text"
-                placeholder="John Doe"
+                placeholder="Name"
                 className="w-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
@@ -105,7 +105,7 @@ const Contact = () => {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
               <textarea
                 rows="5"
-                placeholder="Hello Apsara..."
+                placeholder="Hello..."
                 className="w-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               ></textarea>

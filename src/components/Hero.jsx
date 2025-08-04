@@ -69,7 +69,7 @@ const Hero = () => {
           Hi, I'm{' '}
           <span className="text-blue-600 dark:text-blue-400">
             <Typewriter
-              words={['A.M.B.A.K. Abeysinghe']}
+              words={['Apsara Abeysinghe']}
              
               cursor
               cursorStyle="|"

@@ -18,7 +18,7 @@ const projects = [
     id: 2,
     title: "Event Management Platform",
     description: "Machine learning application for image recognition and classification.",
-    tags: ["Flutter", "Firbase", "Flask"],
+    tags: ["Flutter", "Firbase",],
     image: "/Eve.png",
     links: {
       live: "#",

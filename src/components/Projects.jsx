@@ -10,7 +10,7 @@ const projects = [
     tags: ["UI/UX Design", "Java", "Servlets"],
     image: "/moviebooking.png",
     links: {
-      live: "#",
+      
       code: "https://github.com/Gawesh2001/SEproject"
     }
   },
@@ -21,7 +21,7 @@ const projects = [
     tags: ["Flutter", "Firbase",],
     image: "/Eve.png",
     links: {
-      live: "#",
+      live: "https://www.figma.com/proto/Anz9nwppdsvuh5igSqeOiU/Social-Event-Plan-App?node-id=0-1&t=AurKOsLIT9nWS4Ue-1",
       code: "https://github.com/Gawesh2001/Eventory"
     }
   },
@@ -31,10 +31,7 @@ const projects = [
     description: "Mobile application connecting yoga practitioners with instructors.",
     tags: ["C#", "MySQL", ],
     image: "/blood.png",
-    links: {
-      live: "#",
-      code: "#"
-    }
+    
   },
   {
     id: 4,
@@ -43,7 +40,7 @@ const projects = [
     tags: ["UI/UX Design", "Flutter", "Firebase"],
     image: "/home.png",
     links: {
-      live: "#",
+      live: "https://www.figma.com/design/UajSyNKiGB49jFdCUSsXM2/Home-Service-Booking-App?node-id=0-1&t=aFLbucALkfYLPdwp-1",
       code: "https://github.com/Gawesh2001/MobileProject"
     }
   },
@@ -65,8 +62,8 @@ const projects = [
     tags: ["HTML","CSS","PHP", "MySQL"],
     image: "/Airquality.png",
     links: {
-      live: "#",
-      code: "#"
+     
+      code: "https://github.com/Gawesh2001/SDTP-Project"
     }
   }
   

@@ -1,3 +1,4 @@
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiX } from 'react-icons/fi';
 import { useState } from 'react';
@@ -10,7 +11,6 @@ const projects = [
     tags: ["UI/UX Design", "Java", "Servlets"],
     image: "/moviebooking.png",
     links: {
-      
       code: "https://github.com/Gawesh2001/SEproject"
     }
   },
@@ -18,7 +18,7 @@ const projects = [
     id: 2,
     title: "Event Management Platform",
     description: "Machine learning application for image recognition and classification.",
-    tags: ["Flutter", "Firbase",],
+    tags: ["Flutter", "Firebase"],
     image: "/Eve.png",
     links: {
       live: "https://www.figma.com/proto/Anz9nwppdsvuh5igSqeOiU/Social-Event-Plan-App?node-id=0-1&t=AurKOsLIT9nWS4Ue-1",
@@ -29,9 +29,8 @@ const projects = [
     id: 3,
     title: "Blood Donation Management System",
     description: "Mobile application connecting yoga practitioners with instructors.",
-    tags: ["C#", "MySQL", ],
-    image: "/blood.png",
-    
+    tags: ["C#", "MySQL"],
+    image: "/blood.png"
   },
   {
     id: 4,
@@ -59,25 +58,23 @@ const projects = [
     id: 6,
     title: "Air Quality Monitoring Website",
     description: "Machine learning application for image recognition and classification.",
-    tags: ["HTML","CSS","PHP", "MySQL"],
+    tags: ["HTML", "CSS", "PHP", "MySQL"],
     image: "/Airquality.png",
     links: {
-     
       code: "https://github.com/Gawesh2001/SDTP-Project"
     }
   }
-  
 ];
 
 const ProjectModal = ({ project, onClose }) => {
   return (
     <motion.div
       className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center"
-      initial={{ opacity: 0,scale: 0.95}}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
     >
-      <div className="relative w-full max-w-3xl bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 mx-4 md:mx-0">
+      <div className="relative w-full max-w-5xl bg-white dark:bg-gray-900 rounded-lg shadow-xl p-8 mx-4 md:mx-0 overflow-y-auto max-h-[90vh]">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-xl text-gray-600 dark:text-gray-300 hover:text-red-500"
@@ -85,18 +82,20 @@ const ProjectModal = ({ project, onClose }) => {
           <FiX />
         </button>
 
-        <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-col md:flex-row md:items-start gap-6">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full md:w-1/2 rounded-lg object-cover"
+            className="w-full md:w-[60%] rounded-lg object-cover max-h-[500px]"
           />
 
           <div className="flex-1 space-y-4">
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+            <h3 className="text-3xl font-semibold text-gray-800 dark:text-white">
               {project.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+            <p className="text-md text-gray-600 dark:text-gray-300">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag, index) => (
                 <span
@@ -107,23 +106,27 @@ const ProjectModal = ({ project, onClose }) => {
                 </span>
               ))}
             </div>
-            <div className="flex gap-4 pt-2">
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-blue-600 hover:underline"
-              >
-                <FiExternalLink /> Live Demo
-              </a>
-              <a
-                href={project.links.code}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-blue-600 hover:underline"
-              >
-                <FiGithub /> View Code
-              </a>
+            <div className="flex gap-4 pt-2 flex-wrap">
+              {project.links?.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:underline"
+                >
+                  <FiExternalLink /> Live Demo
+                </a>
+              )}
+              {project.links?.code && (
+                <a
+                  href={project.links.code}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:underline"
+                >
+                  <FiGithub /> View Code
+                </a>
+              )}
             </div>
           </div>
         </div>

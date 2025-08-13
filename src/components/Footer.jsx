@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiDribbble } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiDribbble } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -20,8 +20,8 @@ const Footer = () => {
         <div className="flex gap-4 text-lg">
           <a href="https://github.com/Apz2003"><FiGithub /></a>
           <a href="www.linkedin.com/in/apsara-abeysinghe-a01641342"><FiLinkedin /></a>
-          <a href="#"><FiTwitter /></a>
-          <a href="#"><FiDribbble /></a>
+          <a href="buddiniapsara2003@gmail.com"><FiMail /></a>
+        
         </div>
       </div>
       <div className="text-center text-sm mt-6 text-gray-400">

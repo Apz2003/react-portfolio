@@ -49,7 +49,7 @@ const projects = [
     title: "University Communication Platform",
     description: "Mobile application connecting yoga practitioners with instructors.",
     tags: ["React", "GSAP", "Firebase"],
-    image: "/yoga.png",
+    image: "/uni.png",
     links: {
       live: "#",
       code: "https://github.com/Gawesh2001/UNIapp-WEB"

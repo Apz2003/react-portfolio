@@ -92,7 +92,7 @@ const Hero = () => {
 
         {/* Download Button */}
         <motion.a
-          href="/Apsara Abeysinghe .pdf"
+          href="/APSARA ABEYSINGHE.pdf"
           download
           className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-lg font-medium transition"
           whileHover={{ scale: 1.05 }}

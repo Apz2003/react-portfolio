@@ -60,8 +60,8 @@ const achievements = [
   {
     title: "Certificate in information technology",
     description: "Fundamentals of information technology.",
-    date: "2023",
-    image: "/html.png",
+    date: "2024",
+    image: "/Esoft.jpeg",
   },
 ];
 

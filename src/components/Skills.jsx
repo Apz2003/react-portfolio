@@ -1,6 +1,21 @@
+
 import { motion } from 'framer-motion';
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaFigma, FaPython } from 'react-icons/fa';
-import { SiTailwindcss, SiFirebase, SiFramer, SiFlutter } from 'react-icons/si';
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNodeJs,
+  FaFigma,
+  FaPython,
+  FaAward,
+} from 'react-icons/fa';
+import {
+  SiTailwindcss,
+  SiFirebase,
+  SiFramer,
+  SiFlutter,
+} from 'react-icons/si';
 
 const skills = [
   { name: 'React', icon: <FaReact />, color: 'text-blue-500' },
@@ -16,6 +31,30 @@ const skills = [
   { name: 'Python', icon: <FaPython />, color: 'text-yellow-600' },
 ];
 
+const achievements = [
+  {
+    title: 'Industry Preparation Training Program – 2025',
+    description: 'Completed program covering UI/UX, AI, cloud computing, and more.',
+    date: 'Aug 2025',
+    image: '/certificates/industry-training.jpg', // Replace with your image path
+    link: '/certificates/industry-training.pdf',  // Replace with your file link
+  },
+  {
+    title: 'UI/UX Design Workshop',
+    description: 'Hands-on training with Figma and user-centered design principles.',
+    date: 'May 2025',
+    image: '/certificates/uiux-workshop.jpg',
+    link: '/certificates/uiux-workshop.pdf',
+  },
+  {
+    title: 'Foundations of User Experience (UX) Design',
+    description: 'Scored 155 marks in the official EPS-TOPIK exam.',
+    date: '2024',
+    image: '/certificates/eps-topik.jpg',
+    link: '/certificates/eps-topik.pdf',
+  },
+];
+
 const Skills = () => {
   return (
     <motion.section
@@ -27,10 +66,15 @@ const Skills = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Skills & Tools</h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-10">Technologies I work with</p>
+        {/* Skills Section */}
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Skills & Tools
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-10">
+          Technologies I work with
+        </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center mb-16">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -47,6 +91,54 @@ const Skills = () => {
               <span className="text-sm text-gray-700 dark:text-gray-300 font-medium">
                 {skill.name}
               </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Achievements Section */}
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Achievements & Certificates
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-10">
+          Recognitions and milestones in my learning journey
+        </p>
+
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {achievements.map((achievement, index) => (
+            <motion.div
+              key={index}
+              className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+              <div className="text-3xl text-yellow-500 mb-3">
+                <FaAward />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                {achievement.title}
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 text-center">
+                {achievement.description}
+              </p>
+              <span className="text-xs text-gray-500 dark:text-gray-500 mb-3">
+                {achievement.date}
+              </span>
+              {/* Certificate Image */}
+              <img
+                src={achievement.image}
+                alt={achievement.title}
+                className="rounded-lg shadow-md mb-3 w-full object-cover h-40"
+              />
+              {/* Direct Link */}
+              <a
+                href={achievement.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline text-sm"
+              >
+                View Certificate
+              </a>
             </motion.div>
           ))}
         </div>

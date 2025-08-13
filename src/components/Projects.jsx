@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     title: "Movie Ticket Booking Website",
-    description: "An online learning platform with interactive courses and progress tracking.",
+    description: "A web-based platform allowing users to browse movies, view showtimes, and book tickets online.",
     tags: ["UI/UX Design", "Java", "Servlets"],
     image: "/moviebooking.png",
     links: {
@@ -17,7 +17,7 @@ const projects = [
   {
     id: 2,
     title: "Event Management Platform",
-    description: "Machine learning application for image recognition and classification.",
+    description: " Enables event organizers to manage registrations, transport, and logistics for attendees.",
     tags: ["Flutter", "Firebase"],
     image: "/Eve.png",
     links: {
@@ -28,14 +28,15 @@ const projects = [
   {
     id: 3,
     title: "Blood Donation Management System",
-    description: "Mobile application connecting yoga practitioners with instructors.",
+    description: "A Windows Forms application for managing donor records, blood inventory,and hospital requests, designed to streamline blood donation processes efficiently.",
+
     tags: ["C#", "MySQL"],
     image: "/blood.png"
   },
   {
     id: 4,
     title: "Home Service Booking App",
-    description: "An online learning platform with interactive courses and progress tracking.",
+    description: " A mobile app that connects users with local service providers for home maintenance needs. ",
     tags: ["UI/UX Design", "Flutter", "Firebase"],
     image: "/home.png",
     links: {
@@ -57,7 +58,7 @@ const projects = [
   {
     id: 6,
     title: "Air Quality Monitoring Website",
-    description: "Machine learning application for image recognition and classification.",
+    description: "Tracks real-time AQI with maps, trends, and health tips.",
     tags: ["HTML", "CSS", "PHP", "MySQL"],
     image: "/Airquality.png",
     links: {

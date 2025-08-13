@@ -21,7 +21,7 @@ const skills = [
 ];
 
 const achievements = [
-  { title: "Industry Preparation Training Program – 2025", image: "/certificates/industry-training.jpg" },
+
   { title: "Foundations of UX Design", image: "/uiux.png" },
   { title: "JavaScript Essentials 1", image: "/js.png" },
   { title: "CSS Basics", image: "/css.png" },
@@ -68,8 +68,8 @@ const Skills = () => {
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Achievements & Certificates
         </h2>
-        <div className="overflow-hidden relative">
-          <div className="flex animate-marquee">
+        <div className="overflow-hidden relative group">
+          <div className="flex animate-marquee group-hover:pause-marquee">
             {[...achievements, ...achievements].map((achievement, index) => (
               <div
                 key={index}
@@ -99,6 +99,9 @@ const Skills = () => {
         }
         .animate-marquee {
           animation: marquee 20s linear infinite;
+        }
+        .pause-marquee {
+          animation-play-state: paused;
         }
       `}</style>
     </motion.section>

@@ -1,3 +1,4 @@
+
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSend, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
@@ -14,10 +15,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'service_0hh36yn',      // ✅ Your Service ID
-        'template_wy6yp49',     // ✅ Your Template ID
+        'service_0hh36yn', // Service ID
+        'template_wy6yp49', // Template ID
         formRef.current,
-        'FSBTT3C9ucoLJ6fU2'       // ✅ Replace with your EmailJS Public Key
+        'FSBTT3C9ucoLJ6fU2' // Public Key
       )
       .then(
         () => {
@@ -72,6 +73,13 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 space-y-6"
           >
+            {/* Added Image */}
+            <img
+              src="/contact .png" // change to your actual image path
+              alt="Contact"
+              className="w-48 h-48 object-contain rounded-full mx-auto mb-4"
+            />
+
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
               Contact Information
             </h3>

@@ -1,4 +1,5 @@
 
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs,
@@ -21,7 +22,6 @@ const skills = [
 ];
 
 const achievements = [
-
   { title: "Foundations of UX Design", image: "/uiux.png" },
   { title: "JavaScript Essentials 1", image: "/js.png" },
   { title: "CSS Basics", image: "/css.png" },
@@ -29,6 +29,57 @@ const achievements = [
 ];
 
 const Skills = () => {
+  const scrollRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (isDragging) return; // pause when dragging/swiping
+    const scrollContainer = scrollRef.current;
+    const interval = setInterval(() => {
+      if (scrollContainer) {
+        scrollContainer.scrollLeft += 1;
+        // Loop back
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
+        }
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, [isDragging]);
+
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // scroll speed
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Touch swipe handlers (mobile)
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+  const handleTouchEnd = () => setIsDragging(false);
+
   return (
     <motion.section
       id="skills"
@@ -64,46 +115,40 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Achievements Smooth Marquee */}
+        {/* Achievements Scroll */}
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Achievements & Certificates
         </h2>
-        <div className="overflow-hidden relative group">
-          <div className="flex animate-marquee group-hover:pause-marquee">
-            {[...achievements, ...achievements].map((achievement, index) => (
-              <div
-                key={index}
-                className="min-w-[250px] mx-3 rounded-xl overflow-hidden bg-white/10 dark:bg-gray-700/20 border border-white/20 shadow-lg"
-              >
-                <img
-                  src={achievement.image}
-                  alt={achievement.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-3">
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-                    {achievement.title}
-                  </h3>
-                </div>
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-scroll scrollbar-hide cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {[...achievements, ...achievements].map((achievement, index) => (
+            <div
+              key={index}
+              className="min-w-[250px] mx-3 rounded-xl overflow-hidden bg-white/10 dark:bg-gray-700/20 border border-white/20 shadow-lg flex-shrink-0"
+            >
+              <img
+                src={achievement.image}
+                alt={achievement.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-3 text-center">
+                <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                  {achievement.title}
+                </h3>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Tailwind custom animation */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
-        }
-        .pause-marquee {
-          animation-play-state: paused;
-        }
-      `}</style>
     </motion.section>
   );
 };

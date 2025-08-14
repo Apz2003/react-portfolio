@@ -3,9 +3,9 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs,
-  FaFigma, FaPython
+  FaFigma, FaPython,FaGithub
 } from "react-icons/fa";
-import { SiTailwindcss, SiFirebase, SiFramer, SiFlutter } from "react-icons/si";
+import { SiTailwindcss, SiFirebase, SiFramer, SiFlutter,SiMysql, SiGreensock } from "react-icons/si";
 
 const skills = [
   { name: "React", icon: <FaReact />, color: "text-blue-500" },
@@ -18,7 +18,12 @@ const skills = [
   { name: "Flutter", icon: <SiFlutter />, color: "text-blue-400" },
   { name: "Figma", icon: <FaFigma />, color: "text-pink-500" },
   { name: "Framer Motion", icon: <SiFramer />, color: "text-purple-500" },
-  { name: "Python", icon: <FaPython />, color: "text-yellow-600" },
+  { name: "C#", icon: <FaPython />, color: "text-blue-700" }, 
+  { name: "MySQL", icon: <SiMysql/>, color: "text-red-600" }, 
+  { name: "GSAP", icon: <SiGreensock/>, color: "text-green-500" }, 
+  { name: "GitHub", icon: <FaGithub />, color: "text-gray-800" },
+
+
 ];
 
 const achievements = [

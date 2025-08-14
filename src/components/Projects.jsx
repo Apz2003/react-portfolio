@@ -160,7 +160,9 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md 
+             hover:shadow-2xl hover:scale-105 hover:border-blue-500 hover:border 
+             transition transform duration-300 cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
